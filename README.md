@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=300px height=85px src="public/img/logo.png" alt="Project logo"></a>
+ <img width=363px height=282px src="public/img/logo.png" alt="Project logo"></a>
 </p>
 
 <div align="center">
@@ -20,18 +20,18 @@
 - [Acknowledgments](#acknowledgement)
 - [Compatibility](#compatibility)
 
-## 🚀 feature <a name = "feature"></a>
+## 🚀 Feature <a name = "feature"></a>
 
 A professional react boilerplate.
 
 1. Support react hooks & HMR.
 2. All executable files use typescript.
 3. Powerful custom development environment.
-4. Support lint & test & code inspection & automatic style unification based on git hooks
-5. Out-of-the-box business packaging
-   1. component based on antd
-   2. server based on express
-   3. state store based on mobx-state-tree,
+4. Support lint & test & code inspection & automatic style unification based on git hooks.
+5. Out-of-the-box business packaging.
+   1. component based on antd.
+   2. server based on express.
+   3. state store based on mobx-state-tree.
 6. support multiple environment toml type config.
 
 More new features are on the way...
