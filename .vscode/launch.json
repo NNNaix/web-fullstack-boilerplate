@@ -1,0 +1,37 @@
+{
+    // 使用 IntelliSense 了解相关属性。
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "nodemon",
+            "runtimeExecutable": "nodemon",
+            "restart": true,
+            "protocol": "inspector",
+            "sourceMaps": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "skipFiles": ["<node_internals>/**"],
+            "runtimeArgs": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Debug",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run-script", "server:watch"],
+            "port": 9229,
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach Debug",
+            "port": 3000,
+            "skipFiles": ["<node_internals>/**"]
+        }
+    ]
+}

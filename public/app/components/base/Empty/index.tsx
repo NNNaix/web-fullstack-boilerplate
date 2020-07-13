@@ -1,0 +1,11 @@
+import React, { FC } from 'react';
+import { Empty as BaseEmpty } from 'antd';
+import { EmptyProps as BaseEmptyProps } from 'antd/es/empty';
+
+type EmptyProps = BaseEmptyProps;
+
+const Empty: FC<EmptyProps> = (props) => {
+    return <BaseEmpty {...props} />;
+};
+
+export default Empty;
