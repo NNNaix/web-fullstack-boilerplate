@@ -17,7 +17,7 @@ const Provider: FC<{ children: ReactNode }> = ({ children }) => (
 const App: FC = () => {
     const layoutType = BASIC_LAYOUT;
     return (
-        <div className="dms-app">
+        <div className="app">
             <Provider>
                 <ErrorBoundary>
                     <Router>

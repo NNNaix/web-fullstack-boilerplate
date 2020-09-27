@@ -4,7 +4,7 @@ import { TypographyProps as BaseTypographyProps } from 'antd/es/typography';
 
 const { Text, Title, Paragraph } = BaseTypography;
 
-type TypographyProps = BaseTypographyProps;
+export type TypographyProps = BaseTypographyProps;
 type TypographyComponent = FC<TypographyProps> & {
     Text: typeof Text;
     Title: typeof Title;

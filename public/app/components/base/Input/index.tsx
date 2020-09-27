@@ -5,7 +5,6 @@ import { InputProps as BaseInputProps } from 'antd/es/input';
 const { Group, Search, Password, TextArea } = BaseInput;
 
 export type InputProps = BaseInputProps;
-
 type InputComponent = FC<InputProps> & {
     Group: typeof Group;
     Search: typeof Search;

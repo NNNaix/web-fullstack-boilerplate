@@ -4,11 +4,10 @@
 import 'mobx-react-lite/batchingForReactDom';
 import { createContext, useContext } from 'react';
 import { Instance, types } from 'mobx-state-tree';
-import { frozen } from 'mobx-state-tree/dist/types/utility-types/frozen';
 
 const masterModelProperties = {
     /** todo set router store */
-    example: types.optional(frozen(), {}),
+    example: types.optional(types.frozen(), {}),
 };
 const masterModel = types.model(masterModelProperties);
 

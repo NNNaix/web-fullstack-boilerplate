@@ -1,4 +1,5 @@
 import { types } from 'mobx-state-tree';
+import { DEFAULT_PAGE_SIZE } from '@app/utils/const';
 
 export interface PaginationModelInterface {
     rowCount: any;
@@ -10,7 +11,7 @@ export interface PaginationModelInterface {
 
 const defInit: PaginationModelInterface = {
     rowCount: 0,
-    pageSize: 20,
+    pageSize: DEFAULT_PAGE_SIZE,
     pageCount: 0,
     currPage: 1,
 };

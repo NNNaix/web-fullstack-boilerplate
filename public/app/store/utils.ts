@@ -1,5 +1,6 @@
-import { IMSTMap, ISimpleType, flow, IMSTArray } from 'mobx-state-tree';
+import { flow, IMSTArray, IMSTMap, ISimpleType } from 'mobx-state-tree';
 import { UpdateFnPropsType } from '@app/typings/type';
+import { isFunction } from '@app/utils/common';
 
 export function autoContextFlow<
     Args extends any[],
@@ -23,7 +24,8 @@ export function autoContextFlow<
 export function generateAutoContextFlowWithSelf<
     S extends { loadWatcher: IMSTMap<ISimpleType<boolean>> } = any
 >(self: S) {
-    return autoContextFlow.bind(null, self);
+    return <Args extends any[]>(loadWatcherKey: string, fn: (...args: Args) => Promise<any>) =>
+        autoContextFlow(self, loadWatcherKey, fn);
 }
 
 export function generateMSTArrayUpdateFn<T extends any>(target: IMSTArray<ISimpleType<T>>) {
@@ -36,23 +38,16 @@ export function generateMSTArrayUpdateFn<T extends any>(target: IMSTArray<ISimpl
         }
     };
 }
-type MSTPrimaryValue =
-    | number
-    | string
-    | boolean
-    | undefined
-    | null
-    | { [key: string]: any }
-    | any[];
+
+export type MSTPrimaryValue = number | string | boolean | any;
 
 type MapPrimaryValueType<S, K extends keyof S> = S[K] extends MSTPrimaryValue ? S[K] : never;
 
 export function generateMSTPrimaryUpdateFn<S, K extends keyof S>(target: S, key: K) {
     return function fn(props: UpdateFnPropsType<MapPrimaryValueType<S, K>>) {
-        if (typeof props === 'function') {
+        if (isFunction(props)) {
             fn(props(target[key]));
         } else {
-            console.log(props);
             target[key] = props;
         }
     };

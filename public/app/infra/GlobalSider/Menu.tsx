@@ -1,19 +1,23 @@
 import React, { FC } from 'react';
-import { Divider, Menu } from 'antd';
 import { Link } from 'react-router-dom';
-import { Icon } from '@app/components/base';
+import { Divider, Icon, Menu } from '@app/components/base';
+import { globalConfig } from '@app/utils/const';
+
+enum MenuSection {
+    TOP = 'TOP',
+    MIDDLE = 'MIDDLE',
+    BOTTOM = 'BOTTOM',
+}
 
 export interface MenuItemProps {
     title: string;
     path: string;
-    icon: string;
+    icon?: string;
+    section: MenuSection;
 }
-
-export type MenuSectionType = MenuItemProps[];
 
 interface SiderMenuProps {
     selectedKeys: string[];
-    menuData: MenuSectionType[];
 }
 
 export const LastPathRecorder = {
@@ -32,23 +36,35 @@ function to(path: string) {
 }
 
 const getMenuItems = (menuData: MenuItemProps[]) => {
-    return menuData.map(({ title, path, icon }) => (
+    return menuData.map(({ title, path, icon = '' }) => (
         <Menu.Item key={path} title={title} className="sider-menu-item">
-            <Link to={to(path)}>
+            <Link data-allowed-element-when-alerting to={to(path)}>
                 <Icon type={icon} style={{ paddingRight: 13 }} />
-                <span className="">{title}</span>
+                <span>{title}</span>
             </Link>
         </Menu.Item>
     ));
 };
 
-const SiderMenu: FC<SiderMenuProps> = ({ selectedKeys, menuData }) => {
+const SiderMenu: FC<SiderMenuProps> = ({ selectedKeys }) => {
+    const menuList = globalConfig.menu;
+    const topMenuSection = menuList.filter((menuItem) => menuItem.section === MenuSection.TOP);
+    const middleMenuSection = menuList.filter(
+        (menuItem) => menuItem.section === MenuSection.MIDDLE,
+    );
+    const bottomMenuSection = menuList.filter(
+        (menuItem) => menuItem.section === MenuSection.BOTTOM,
+    );
+    const menuSectionList = [topMenuSection, middleMenuSection, bottomMenuSection].filter(
+        (section) => !!section.length,
+    );
+
     return (
         <div className="global-sider-menu">
-            {menuData.map((menuSection, i) => (
+            {menuSectionList.map((menuSection, i) => (
                 <div key={menuSection[0].path} className="global-sider-menu-section">
                     <Menu selectedKeys={selectedKeys}>{getMenuItems(menuSection)}</Menu>
-                    {i !== menuData.length - 1 && (
+                    {i !== menuSectionList.length - 1 && (
                         <div style={{ padding: '0 20px' }}>
                             <Divider style={{ margin: '20px 0' }} />
                         </div>

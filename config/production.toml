@@ -46,7 +46,7 @@ change_origin = true
 #################################### Users ###############################
 [auth]
 # Login cookie name
-login_cookie_name = "session"
+login_cookie_name = ""
 
 # URL to redirect the user to if user visit without login cookie name
 login_url = ""

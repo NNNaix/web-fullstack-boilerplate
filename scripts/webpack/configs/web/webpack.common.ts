@@ -5,7 +5,7 @@ import FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin';
 // import WebpackBuildNotifierPlugin from 'webpack-build-notifier';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 // eslint-disable-next-line import/no-unresolved
-import { Options as HtmlMinifierOptions } from 'html-minifier';
+// import { Options as HtmlMinifierOptions } from 'html-minifier';
 import { loader as MiniCssExtractLoader } from 'mini-css-extract-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
@@ -33,19 +33,19 @@ function getCssLoaders(importLoaders: number) {
 }
 
 // index.html 压缩选项
-const htmlMinifyOptions: HtmlMinifierOptions = {
-    collapseWhitespace: true,
-    collapseBooleanAttributes: true,
-    collapseInlineTagWhitespace: true,
-    removeComments: true,
-    removeRedundantAttributes: true,
-    removeScriptTypeAttributes: true,
-    removeStyleLinkTypeAttributes: true,
-    minifyCSS: true,
-    minifyJS: true,
-    minifyURLs: true,
-    useShortDoctype: true,
-};
+// const htmlMinifyOptions: HtmlMinifierOptions = {
+//     collapseWhitespace: true,
+//     collapseBooleanAttributes: true,
+//     collapseInlineTagWhitespace: true,
+//     removeComments: true,
+//     removeRedundantAttributes: true,
+//     removeScriptTypeAttributes: true,
+//     removeStyleLinkTypeAttributes: true,
+//     minifyCSS: true,
+//     minifyJS: true,
+//     minifyURLs: true,
+//     useShortDoctype: true,
+// };
 
 const commonConfig: Configuration = {
     cache: true,
@@ -85,7 +85,8 @@ const commonConfig: Configuration = {
         new HtmlWebpackPlugin({
             // HtmlWebpackPlugin 会调用 HtmlMinifier 对 HTMl 文件进行压缩
             // 只在生产环境压缩
-            minify: inDev ? false : htmlMinifyOptions,
+            minify: false,
+            //  inDev ? false : htmlMinifyOptions,
             // filename: resolve(__dirname, './public/views/index.html'),
             template: resolve(rootPath, './public/views/index.template.html'),
             templateParameters: (...args: any[]) => {

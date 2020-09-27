@@ -1,0 +1,15 @@
+#root {
+    height: 100%;
+}
+
+.app {
+    height: 100%;
+    .global-layout {
+        height: 100%;
+        .global-header {
+            @include flex-layout-align-center(space-between);
+            height: 48px;
+            padding: 0 20px;
+        }
+    }
+}
