@@ -40,10 +40,10 @@ More new features are on the way...
 
 ### Prerequisites
 
-Install [NodeJs](https://nodejs.org/en/) and recommend to use nvm for version management.We use yarn as our daily package manager
+Install [NodeJs](https://nodejs.org/en/) and recommend to use nvm for version management.We use pnpm as our daily package manager
 
 ```
-npm i yarn -g
+npm i pnpm -g
 ```
 
 ### Installing
@@ -53,7 +53,7 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-yarn install
+pnpm install
 ```
 
 End with an example of getting some data out of the system or using it for a little demo.
@@ -67,7 +67,7 @@ Explain how to run the automated tests for this system.
 Explain what these tests test and why
 
 ```
-yarn run lint
+pnpm lint
 ```
 
 ## 🚀 Deployment <a name = "deployment"></a>
@@ -75,7 +75,7 @@ yarn run lint
 Add additional notes about how to deploy this on a live system.
 
 ```
-yarn run build
+pnpm build
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>

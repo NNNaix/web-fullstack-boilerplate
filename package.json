@@ -11,24 +11,24 @@
     },
     "private": true,
     "scripts": {
-        "dev": "yarn run dev:web && yarn run dev:node",
+        "dev": "pnpm dev:web && pnpm dev:node",
         "dev:web": "cross-env-shell NODE_ENV=development ts-node --files -P ./scripts/webpack/tsconfig.json -r tsconfig-paths/register ./scripts/webpack/commands/startDev.ts --open",
         "dev:node": "cross-env-shell NODE_ENV=development TS_NODE_FILES=true TS_NODE_PROJECT=./server/tsconfig.json node --inspect=5858  -r ts-node/register  -r tsconfig-paths/register -r source-map-support/register ./server/index.ts",
         "dev:watch-node": "nodemon",
         "prod": "cross-env NODE_ENV=production node dist/server.js",
-        "build": "yarn run build:web && yarn run build:node",
+        "build": "pnpm build:web && pnpm build:node",
         "build:web": "cross-env-shell NODE_ENV=production ts-node --files -P ./scripts/webpack/tsconfig.json -r tsconfig-paths/register ./scripts/webpack/commands/buildWeb.ts",
         "build:node": "cross-env-shell NODE_ENV=production ts-node --files -P ./scripts/webpack/tsconfig.json -r tsconfig-paths/register ./scripts/webpack/commands/buildNode.ts",
-        "build:analyze": "yarn build --analyze",
+        "build:analyze": "pnpm build --analyze",
         "test": "jest",
-        "lint": "yarn run lint:eslint && yarn run lint:stylelint",
+        "lint": "pnpm lint:eslint && pnpm lint:stylelint",
         "lint:eslint": "eslint -c .eslintrc.js --ext /*.js public/app/**/*.{ts,tsx} {server,scripts}/**/*.ts",
         "lint:stylelint": "stylelint --config .stylelintrc.json public/sass/*.{css,less,scss}",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged && yarn check --integrity",
+            "pre-commit": "lint-staged",
             "commit-msg": "commitlint -c .commitlintrc.js -E HUSKY_GIT_PARAMS"
         }
     },
@@ -53,7 +53,7 @@
         "watch": [
             "server"
         ],
-        "exec": "yarn run dev:node",
+        "exec": "pnpm dev:node",
         "ext": "ts"
     },
     "engines": {
