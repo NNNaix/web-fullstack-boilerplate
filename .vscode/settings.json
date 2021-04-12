@@ -5,7 +5,8 @@
     "search.exclude": {
         "**/node_modules": true,
         "dist": true,
-        "yarn.lock": true
+        "yarn.lock": true,
+        "pnpm-lock.yaml": true
     },
     // 指定哪些文件不被 VSCode 监听，预防启动 VSCode 时扫描的文件太多，导致 CPU 占用过高
     "files.watcherExclude": {
@@ -13,7 +14,8 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true,
         "dist": true,
-        "yarn.lock": true
+        "yarn.lock": true,
+        "pnpm-lock.yaml": true
     },
     // 配置 VScode 使用 prettier 的 formatter
     "[javascript]": {
