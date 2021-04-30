@@ -93,7 +93,7 @@ pnpm build
 
 1. Migrate webapck 4 to webpack 5
 2. Built-in scaffold
-3. Add Theme System
+3. Add theme system
 4. Support micro-frontend
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
