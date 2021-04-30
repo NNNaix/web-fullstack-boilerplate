@@ -18,12 +18,11 @@
 
         "paths": {
             // 配置模块路径映射
-            "@/*": ["./"],
-            "@public/*": ["./public/*"],
+            "@client/*": ["./client/*"],
             "@server/*": ["./server/*"],
             "@scripts/*": ["./scripts/webpack/*"],
-            "@img/*": ["./public/img/*"],
-            "@app/*": ["./public/app/*"]
+            "@img/*": ["./client/img/*"],
+            "@app/*": ["./client/app/*"]
         },
         /* Experimental Options */
         "experimentalDecorators": true,

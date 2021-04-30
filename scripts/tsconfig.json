@@ -1,0 +1,9 @@
+{
+    "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        /* Basic Options */
+        "target": "ESNext",
+        "module": "commonjs",
+        "moduleResolution": "Node"
+    }
+}

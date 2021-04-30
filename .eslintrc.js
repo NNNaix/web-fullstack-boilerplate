@@ -4,10 +4,12 @@ const OFF = 0;
 const ERROR = 2;
 
 module.exports = {
+    root: true,
     env: {
         browser: true,
         es6: true,
         node: true,
+        jest: true,
     },
     extends: [
         'airbnb',
@@ -19,8 +21,6 @@ module.exports = {
         'plugin:unicorn/recommended',
         'plugin:promise/recommended',
         'prettier',
-        'prettier/react',
-        'prettier/@typescript-eslint',
     ],
     globals: {
         Atomics: 'readonly',
@@ -41,10 +41,11 @@ module.exports = {
                 extensions: ['.tsx', '.ts', '.js', '.json', 'scss'],
             },
             typescript: {
-                directory: [
+                project: [
                     resolve('./tsconfig.base.json'),
-                    resolve('./public/app/tsconfig.json'),
-                    resolve('./scripts/webpack/tsconfig.json'),
+                    resolve('./client/app/tsconfig.json'),
+                    resolve('./scripts/tsconfig.json'),
+                    resolve('./server/tsconfig.json'),
                 ],
             },
         },
@@ -52,7 +53,6 @@ module.exports = {
     plugins: ['react', '@typescript-eslint', 'unicorn', 'promise'],
     rules: {
         'eslint-comments/disable-enable-pair': [ERROR, { allowWholeFile: true }],
-
         'import/extensions': [
             ERROR,
             'ignorePackages',
@@ -63,14 +63,14 @@ module.exports = {
                 js: 'never',
             },
         ],
-
+        'import/prefer-default-export': OFF,
         'unicorn/prevent-abbreviations': OFF,
         'unicorn/filename-case': [
             ERROR,
             {
                 cases: {
                     // 中划线
-                    kebabCase: false,
+                    kebabCase: true,
                     // 小驼峰
                     camelCase: true,
                     // 下划线
@@ -88,6 +88,8 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': OFF,
         '@typescript-eslint/no-useless-constructor': ERROR,
         '@typescript-eslint/camelcase': OFF,
+        '@typescript-eslint/no-use-before-define': [ERROR],
+        '@typescript-eslint/no-shadow': [ERROR],
 
         'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx'] }],
         'react/jsx-indent-props': [ERROR, 4],
@@ -95,10 +97,14 @@ module.exports = {
         'react/state-in-constructor': OFF,
         'react/jsx-props-no-spreading': OFF,
         'react/prop-types': OFF,
+        'react/require-default-props': OFF,
+
+        'promise/always-return': OFF,
 
         'func-names': OFF,
         'lines-between-class-members': OFF,
         'max-classes-per-file': OFF,
+        'class-methods-use-this': OFF,
         'no-console': OFF,
         'no-empty': OFF,
         'no-param-reassign': OFF,
@@ -110,6 +116,9 @@ module.exports = {
         'consistent-return': OFF,
         'no-unsafe-finally': OFF,
         'no-restricted-syntax': OFF,
+        'no-use-before-define': OFF,
+        'no-return-assign': OFF,
+        'no-shadow': OFF,
     },
     overrides: [
         {
@@ -119,13 +128,25 @@ module.exports = {
             },
         },
         {
-            files: ['scripts/**/*.ts', 'Gulpfile.ts'],
+            files: [
+                'scripts/**/*.*s',
+                'Gulpfile.ts',
+                '**/test/**/*.ts',
+                '**/*.test.js',
+                '**/*.spec.js',
+            ],
             rules: {
                 'import/no-extraneous-dependencies': OFF,
             },
         },
         {
-            files: ['server/**/*.ts'],
+            files: ['scripts/**/*.js'],
+            rules: {
+                '@typescript-eslint/no-var-requires': OFF,
+            },
+        },
+        {
+            files: ['server/**/*.ts', 'scripts/**/*.ts'],
             rules: {
                 'react-hooks/rules-of-hooks': OFF,
             },

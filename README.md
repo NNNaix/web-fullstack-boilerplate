@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=363px height=282px src="public/img/logo.png" alt="Project logo"></a>
+ <img width=363px height=282px src="client/img/logo.png" alt="Project logo"></a>
 </p>
 
 <div align="center">
@@ -16,23 +16,24 @@
 - [Getting Started](#getting_started)
 - [Running the tests](#tests)
 - [Deployment](#deployment)
-- [Built Using](#built_using)
+- [Road Map](#road_map)
 - [Acknowledgments](#acknowledgement)
 - [Compatibility](#compatibility)
 
 ## 🚀 Feature <a name = "feature"></a>
 
-A professional react boilerplate.
+A professional react boilerplate and is ready for production.
 
 1. Support react hooks & HMR.
 2. All executable files use typescript.
 3. Powerful custom development environment.
 4. Support lint & test & code inspection & automatic style unification based on git hooks.
 5. Out-of-the-box business packaging.
-   1. component based on antd.
-   2. server based on express.
-   3. state store based on mobx-state-tree.
-6. support multiple environment toml type config.
+   1. Component based on antd.
+   2. Server based on Nest.js.
+   3. State store based on mobx-state-tree.
+   4. Package management is powered by pnpm, so monorepo is natively supported.
+6. Support multiple environment toml type config.
 
 More new features are on the way...
 
@@ -40,10 +41,12 @@ More new features are on the way...
 
 ### Prerequisites
 
-Install [NodeJs](https://nodejs.org/en/) and recommend to use nvm for version management.We use pnpm as our daily package manager
+Install [NodeJs](https://nodejs.org/en/) and recommend to use [nvm](https://github.com/nvm-sh/nvm) for version management and [nrm](https://github.com/Pana/nrm) for registry management. We use [pnpm](https://pnpm.io/) as our daily package manager
 
 ```
 npm i pnpm -g
+
+npm i nrm -g
 ```
 
 ### Installing
@@ -58,11 +61,19 @@ pnpm install
 
 End with an example of getting some data out of the system or using it for a little demo.
 
+### Developing
+
+```
+pnpm dev:web
+
+pnpm dev:node
+```
+
 ## 🔧 Running the tests <a name = "tests"></a>
 
 Explain how to run the automated tests for this system.
 
-### coding style tests
+### Coding style tests
 
 Explain what these tests test and why
 
@@ -78,12 +89,12 @@ Add additional notes about how to deploy this on a live system.
 pnpm build
 ```
 
-## ⛏️ Built Using <a name = "built_using"></a>
+## 🗺 Road Map
 
-- [React](https://reactjs.org/) - Web UI Library
-- [NodeJs](https://nodejs.org/en/) - Server Runtime
-- [Express](https://expressjs.com/) - Server Framework
-- [Webpack](https://webpack.js.org) - Static module bundler
+1. Migrate webapck 4 to webpack 5
+2. Built-in scaffold
+3. Add Theme System
+4. Support micro-frontend
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
@@ -93,9 +104,9 @@ pnpm build
 
 ## :rotating_light: Compatibility <a name = "compatibility"></a>
 
-| ![IE/Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png) <br>IE/Edge | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)<br> Firefox | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) <br>Chrome | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png) <br>Safari | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png) <br>Opera | ![Electron](https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png) <br>Electron |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| IE11, Edge                                                                                                   | last 2 versions                                                                                                    | last 2 versions                                                                                                | last 2 versions                                                                                                | last 2 versions                                                                                            | last 2 versions                                                                                                        |
+| ![IE/Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png) <br>IE/Edge | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) <br> Firefox | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) <br>Chrome | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png) <br>Safari | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png) <br>Opera | ![Electron](https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png) <br>Electron |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| IE11, Edge                                                                                                   | last 2 versions                                                                                                     | last 2 versions                                                                                                | last 2 versions                                                                                                | last 2 versions                                                                                            | last 2 versions                                                                                                        |
 
 ## Reference
 
@@ -103,4 +114,4 @@ pnpm build
 
 ## License
 
-MIT License. Copyright © 2020 NNNaix.
+MIT License. Copyright © 2021 NNNaix.
