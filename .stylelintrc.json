@@ -39,5 +39,5 @@
             }
         ]
     },
-    "ignoreFiles": ["node_modules/**/*", "public/fonts/*", "dist/**/*"]
+    "ignoreFiles": ["node_modules/**/*", "client/fonts/*", "dist/**/*"]
 }

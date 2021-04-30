@@ -1,0 +1,14 @@
+{
+    "extends": "../../tsconfig.base.json",
+
+    "compilerOptions": {
+        /* Basic Options */
+        "jsx": "react" /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */,
+        "isolatedModules": true /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */,
+        /* Module Resolution Options */
+        /* Extensional Options 我们使用 babel 进行编译，但此项可以帮助编辑器正确提示错误*/
+        "target": "ES2019" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */,
+        "module": "ESNext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
+        "resolveJsonModule": true
+    }
+}
