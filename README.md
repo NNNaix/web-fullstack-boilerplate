@@ -22,7 +22,7 @@
 
 ## 🚀 Feature <a name = "feature"></a>
 
-A production ready web full-stack boilerplate. More new feature on the way.
+A production ready web full-stack boilerplate.
 
 1. Support react hooks & HMR.
 2. All executable files use typescript.
