@@ -4,7 +4,7 @@
 </p>
 
 <div align="center">
-    <h3>—— React Pro Boilerplate ——<h3>
+    <h3>—— Web Full-Stack Boilerplate ——<h3>
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/NNNaix/web-fullstack-boilerplate) [![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/NNNaix/web-fullstack-boilerplate)
 
@@ -22,7 +22,7 @@
 
 ## 🚀 Feature <a name = "feature"></a>
 
-A professional react boilerplate and is ready for production.
+A production ready web full-stack boilerplate. More new feature on the way.
 
 1. Support react hooks & HMR.
 2. All executable files use typescript.
