@@ -32,7 +32,7 @@ A professional react boilerplate and is ready for production.
    1. Component based on antd.
    2. Server based on Nest.js.
    3. State store based on mobx-state-tree.
-   4. Package management is powered by pnpm, so monorepo is natively supported.
+   4. Package management powered by pnpm which monorepo is natively supported.
 6. Support multiple environment toml type config.
 
 More new features are on the way...
