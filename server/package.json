@@ -1,7 +1,7 @@
 {
     "name": "server",
     "version": "1.0.0",
-    "description": "This package contains the code for the BFF service.",
+    "description": "This package contains the code for the application backend.",
     "repository": "https://github.com/NNNaix/web-fullstack-boilerplate.git",
     "author": {
         "name": "Pengcheng Geng",

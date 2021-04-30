@@ -1,7 +1,7 @@
 {
     "name": "web-fullstack-boilerplate",
     "version": "1.0.0",
-    "description": "a professional react boilerplate.",
+    "description": "A production ready web full-stack boilerplate with all best practices. More new feature on the way.",
     "repository": "https://github.com/NNNaix/web-fullstack-boilerplate.git",
     "author": {
         "name": "Pengcheng Geng",
