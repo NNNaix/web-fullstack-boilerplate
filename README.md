@@ -6,7 +6,7 @@
 <div align="center">
     <h3>—— React Pro Boilerplate ——<h3>
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/NNNaix/react-pro-boilerplate) [![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/NNNaix/react-pro-boilerplate)
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/NNNaix/web-fullstack-boilerplate) [![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/NNNaix/web-fullstack-boilerplate)
 
 </div>
 

@@ -82,7 +82,7 @@ export function generateCommonConfig({
         },
         plugins: [
             new WebpackBar({
-                name: '[Web] React-Pro-Boilerplate',
+                name: '[Web] web-fullstack-boilerplate',
                 // react 蓝
                 color: '#61dafb',
             }),
