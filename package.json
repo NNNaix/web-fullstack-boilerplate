@@ -152,7 +152,7 @@
         "log-symbols": "^4.0.0",
         "mini-css-extract-plugin": "^0.9.0",
         "new": "^0.1.1",
-        "node-sass": "^4.13.1",
+        "node-sass": "^7.0.0",
         "open": "^7.0.2",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
         "postcss-flexbugs-fixes": "^4.2.0",
